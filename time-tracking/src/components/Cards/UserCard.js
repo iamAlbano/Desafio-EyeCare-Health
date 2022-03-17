@@ -95,7 +95,7 @@ const TimeOptions = styled.button`
     color: var(--desaturated-blue);
     font-size: 15px;
     font-weight: lighter; 
-
+    text-align: left;
     &:hover{
       transition: .3s;
       color: #fff;
