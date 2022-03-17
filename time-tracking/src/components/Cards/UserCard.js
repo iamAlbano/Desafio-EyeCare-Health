@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import avatar from '../../../src/img/image-jeremy.png'
 
@@ -56,23 +56,6 @@ display: flex;
     height: 22vh;
   }
 
-p {
-      z-index: 3;
-      cursor: pointer;
-      color: var(--desaturated-blue);
-      font-size: 15px;
-      font-weight: lighter;  
-  }
-
-p:hover {
-    transition: .3s;
-    color: #fff;
-}
-
-
-p:hover & {
-    cursor: pointer;
-}
 `
 
 const UserImage = styled.img`
@@ -93,14 +76,6 @@ const UserImage = styled.img`
 
 const UserNameContainer = styled.div`
 
-p {
-    font-family: 'Rubik';
-    font-weight: lighter;
-    font-size: 13px;
-    margin-bottom: 3%;
-     
-    
-}
 
 h1 {
     font-size: 35px;
@@ -108,9 +83,32 @@ h1 {
 }
 `
 
+const TimeOptions = styled.button`
+    font-family: 'Rubik';
+    font-weight: lighter;
+    font-size: 13px;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 3%;
+    z-index: 3;
+    cursor: pointer;
+    color: var(--desaturated-blue);
+    font-size: 15px;
+    font-weight: lighter; 
+
+    &:hover{
+      transition: .3s;
+      color: #fff;
+  }
+
+    ${props => props.selected && css`
+      color: #fff !important;
+    `}
+`
 
 
-export default function Card( { name }){
+
+export default function Card( { name, active, handleClick }){
 
     return(
         <CardContainer>
@@ -125,9 +123,21 @@ export default function Card( { name }){
             </CardHeader>
 
             <CardComponent>
-                <p>Daily</p>
-                <p>Weekly</p>
-                <p>Monthly</p>
+                <TimeOptions
+                  onClick={() => handleClick("Daily")}
+                  selected={ active === "Daily" ? true : false }
+                >Daily</TimeOptions>
+
+                <TimeOptions
+                onClick={() => handleClick("Weekly")} 
+                  selected={ active === "Weekly" ? true : false }
+                >Weekly</TimeOptions>
+
+                <TimeOptions 
+                onClick={() => handleClick("Monthly")}
+                  selected={ active === "Monthly" ? true : false }
+                >Monthly</TimeOptions>
+
             </CardComponent>
         </CardContainer>
     )

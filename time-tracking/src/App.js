@@ -10,12 +10,19 @@ function App() {
   let id = 0
   let [timeframe, setTimeframe] = useState('Weekly')
 
+  const handleChangeTime = (time) => {
+    setTimeframe(time)
+  }
+
   return (
     <div className="App">
       <Grid>
 
        
-          <UserCard name="Jeremy Robson" />
+          <UserCard 
+              name="Jeremy Robson"
+              active={ timeframe }
+              handleClick={handleChangeTime} />
         
 
           {   

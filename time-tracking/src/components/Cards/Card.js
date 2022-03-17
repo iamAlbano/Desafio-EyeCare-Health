@@ -182,7 +182,7 @@ if( time === "Daily"){
  current = timestamp.timeframes.weekly.current+"hrs"
  last = "Last Week - "+timestamp.timeframes.weekly.previous+"hrs"
 }  else if( time === "Monthly" ){
-    current = timestamp.monthly.timeframes.current+"hrs"
+    current = timestamp.timeframes.monthly.current+"hrs"
     last = "Last Month - "+timestamp.timeframes.monthly.previous+"hrs"
 }
 
