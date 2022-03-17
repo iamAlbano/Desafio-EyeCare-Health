@@ -40,17 +40,18 @@ border-radius: 0px 0px 15px 15px;
 position: relative;
 margin: 0 auto;
 width: 100%;
-padding: 10%;
 transition: .3s;
 
 display: flex;
 @media(max-width: 900px) {
-    flex-direction: row;
-    justify-content: space-between;
-    height: 9vh;
-  }
+  flex-direction: row;
+  padding: 8%;
+  justify-content: space-between;
+  height: 9vh;
+}
 @media(min-width: 900px) {
     flex-direction: column;
+    padding: 10%;
     justify-content: space-around;
     height: 22vh;
   }
