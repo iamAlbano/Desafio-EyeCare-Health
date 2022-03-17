@@ -8,7 +8,7 @@ const GridComponent = styled.div`
     gap: 8% 2%; 
     grid-template-columns: 7fr 7fr 7fr 7fr;
     transform: translate(0%, -50%);
-    margin: 50vh 20vh 0vh 20vh;
+    margin: 50vh 15vh 0vh 15vh;
   }
   
   @media(max-width: 900px) {

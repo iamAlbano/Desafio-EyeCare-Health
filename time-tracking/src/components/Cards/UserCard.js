@@ -39,22 +39,38 @@ background-color: var(--dark-blue);
 border-radius: 0px 0px 15px 15px;
 position: relative;
 margin: 0 auto;
-z-index: -1;
-
 width: 100%;
 padding: 10%;
-cursor: pointer;
 transition: .3s;
+
+display: flex;
 @media(max-width: 900px) {
+    flex-direction: row;
+    justify-content: space-between;
     height: 9vh;
   }
 @media(min-width: 900px) {
+    flex-direction: column;
+    justify-content: space-around;
     height: 22vh;
   }
 
-&:hover {
+p {
+      z-index: 3;
+      cursor: pointer;
+      color: var(--desaturated-blue);
+      font-size: 15px;
+      font-weight: lighter;  
+  }
+
+p:hover {
     transition: .3s;
-    background-color: var(--desaturated-blue);
+    color: #fff;
+}
+
+
+p:hover & {
+    cursor: pointer;
 }
 `
 
@@ -78,15 +94,10 @@ const UserNameContainer = styled.div`
 
 p {
     font-family: 'Rubik';
-    font-weight: 100;
-    font-size: 15px;
-    @media(max-width: 900px) {
-        margin-bottom: 2%;
-      }
-    
-    @media(min-width: 900px) {
-        margin-bottom: 5%;
-      }
+    font-weight: lighter;
+    font-size: 13px;
+    margin-bottom: 3%;
+     
     
 }
 
@@ -104,7 +115,7 @@ export default function Card( { name }){
         <CardContainer>
             <CardHeader >
 
-                <UserImage src={ avatar } />
+                <UserImage src={ avatar } alt="User Image" />
                 <UserNameContainer>
                     <p>Report for</p>
                     <h2>{ name }</h2>
@@ -113,6 +124,9 @@ export default function Card( { name }){
             </CardHeader>
 
             <CardComponent>
+                <p>Daily</p>
+                <p>Weekly</p>
+                <p>Monthly</p>
             </CardComponent>
         </CardContainer>
     )
