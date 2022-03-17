@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import data from './data.json'
 
 import Grid from './components/GridLayout/Grid'
@@ -6,8 +8,7 @@ import Card from './components/Cards/Card'
 
 function App() {
   let id = 0
- 
-  console.log(data)
+  let [timeframe, setTimeframe] = useState('Weekly')
 
   return (
     <div className="App">
@@ -23,7 +24,8 @@ function App() {
               return (
                
                   <Card  key={ id++ } 
-                        title={ content.title }
+                        timestamp={ content}
+                        time={ timeframe }
                   />
                
               )

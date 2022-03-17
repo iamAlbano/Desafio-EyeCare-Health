@@ -102,7 +102,7 @@ p {
     
 }
 
-h2 {
+h1 {
     font-size: 35px;
     font-weight: 300;
 }
@@ -119,7 +119,7 @@ export default function Card( { name }){
                 <UserImage src={ avatar } alt="User Image" />
                 <UserNameContainer>
                     <p>Report for</p>
-                    <h2>{ name }</h2>
+                    <h1>{ name }</h1>
                 </UserNameContainer>
 
             </CardHeader>
