@@ -22,7 +22,7 @@ padding: 10%;
 margin-bottom: -2vh;
 z-index: 1;
 
-@media(max-width: 900px) {
+@media(max-width: 899px) {
     height: 25vh;
     display: flex;
     flex-direction: row;

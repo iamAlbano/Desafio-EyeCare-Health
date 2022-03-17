@@ -112,24 +112,35 @@ display: flex;
 align-items: start !important;
 margin: 7vh 0%;
 transform: translate(0%, -50%);
-@media(max-width: 900px) {
-    flex-direction: row !important;
-  }
-
-@media(min-width: 900px) {
-    flex-direction: column !important;
-  }
 
 
 h3 {
     font-size: 40px;
     font-weight: 300;
 }
+
 p {
     margin-top: 3%;
-    font-size: 12px;
+    
     font-weight: lighter;
 }
+
+@media(max-width: 900px) {
+    flex-direction: row !important;
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media(min-width: 900px) {
+    flex-direction: column !important;
+
+    p {
+        font-size: 12px;
+    }
+}
+
 
 
 
